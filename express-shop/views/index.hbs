@@ -1,0 +1,50 @@
+{{#if products.length}}
+  <h3>Products list</h3>
+  <br />
+  <div class="row g-3">
+    {{#each products}}
+      <div class="col-12 col-md-4 col-sm-6">
+        <div class="card shadow-sm">
+          <img src={{img}} width="100%" alt="" />
+          <div class="card-body">
+            <p class="card-text fw-bold">{{title}}</p>
+            <div class="d-flex justify-content-between">
+              <p class="p-0 m-0">{{formatData createdAt}}</p>
+              <small class="fs-5 text-muted text-end">{{price}}.00$</small>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+              >details</button>
+
+              {{#if @root.token}}
+                {{#ifequal @root.userId user}}
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                  >edit</button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                  >delete</button>
+                {{/ifequal}}
+              {{/if}}
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+{{else}}
+  <div class="text-center">
+    <h3>I'm really sory, but products not found</h3>
+    <a href="/add"><h4>Add products</h4></a>
+  </div>
+{{/if}}

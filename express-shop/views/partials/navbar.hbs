@@ -1,0 +1,50 @@
+<div class="container py-3">
+  <header>
+    <div
+      class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"
+    >
+      <a
+        href="/"
+        class="d-flex align-items-center text-dark text-decoration-none"
+      >
+        <img width="40px" src="logo.png" alt="" />
+        <span class="fs-5 mx-2">AS || EXPRESS SHOP</span>
+      </a>
+
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        {{#if isProducts}}
+          <a class="me-3 py-2 text-dark" href="/products">my-porducts</a>
+        {{else}}
+          <a
+            class="me-3 py-2 text-dark text-decoration-none"
+            href="/products"
+          >my-porducts</a>
+        {{/if}}
+        {{#if isAdd}}
+          <a class="me-3 py-2 text-dark" href="/add">add</a>
+        {{else}}
+          <a
+            class="me-3 py-2 text-dark text-decoration-none"
+            href="/add"
+          >add</a>
+        {{/if}}
+        <div class="btn-group">
+          {{#if token}}
+            <a href="/logout" class="btn btn-danger">logout</a>
+          {{else}}
+            {{#if isLogin}}
+              <a href="/login" class="btn btn-primary">login</a>
+            {{else}}
+              <a href="/login" class="btn btn-outline-primary">login</a>
+            {{/if}}
+            {{#if isRegister}}
+              <a href="/register" class="btn btn-success">register</a>
+            {{else}}
+              <a href="/register" class="btn btn-outline-success">register</a>
+            {{/if}}
+          {{/if}}
+        </div>
+      </nav>
+    </div>
+  </header>
+</div>

@@ -1,0 +1,59 @@
+<div class="container w-75">
+  <p class="fs-1">Add Product</p>
+  {{#if errorAddProducts}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error!</strong>
+      {{errorAddProducts}}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+  {{/if}}
+  <form action="/add-product" method="post">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        id="floatingInput"
+        placeholder="AS"
+      />
+      <label for="floatingInput">title</label>
+    </div>
+    <div class="form-floating mb-3">
+      <textarea
+        class="form-control"
+        placeholder="descr"
+        name="description"
+        id="floatingTextarea2"
+        style="height: 100px"
+      ></textarea>
+      <label for="floatingTextarea2">description</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        name="img"
+        id="floatingInput"
+        placeholder="AS"
+      />
+      <label for="floatingInput">img</label>
+    </div>
+    <div class="input-group flex-nowrap mb-3">
+      <span class="input-group-text bg-light" id="addon-wrapping">$</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="price"
+        name="price"
+        aria-label="price"
+        aria-describedby="addon-wrapping"
+      />
+    </div>
+    <button class="btn btn-primary">Add Product</button>
+  </form>
+</div>

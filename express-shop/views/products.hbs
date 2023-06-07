@@ -1,0 +1,34 @@
+{{#if myProducts.length}}
+  <h3>My Products list</h3>
+  <br />
+  <div class="row g-3">
+    {{#each myProducts}}
+      <div class="col-12 col-md-4 col-sm-6">
+        <div class="card shadow-sm">
+          <img src={{img}} width="100%" alt="" />
+          <div class="card-body">
+            <p><b>{{title}}</b></p>
+            <p>{{description}}</p>
+          </div>
+          <div class="card-footer p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div
+                class="p-2 rounded bg-success text-white d-flex justify-content-between align-items-center"
+              >
+                <p class="p-0 m-0"><i class="fa-solid fa-user"></i>
+                  {{getFullName user.firstName}}.{{user.lastName}}</p>
+              </div>
+              <p class="fs-5 m-0">{{price}}.00$</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+{{else}}
+  <div class="text-center">
+    <h3>I'm really sory, but you didn't add product</h3>
+    <a href="/add"><h4>Add products</h4></a>
+  </div>
+{{/if}}

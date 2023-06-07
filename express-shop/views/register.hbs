@@ -1,0 +1,62 @@
+<div class="container w-75">
+  <p class="fs-1">Register</p>
+  {{#if registerError}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error!</strong>
+      {{registerError}}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+  {{/if}}
+  <form action="/register" method="post">
+    <div class="d-flex gap-3">
+      <div class="form-floating w-50 mb-3">
+        <input
+          type="text"
+          name="firstname"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Firt Name</label>
+      </div>
+      <div class="form-floating w-50 mb-3">
+        <input
+          type="text"
+          name="lastname"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Last name</label>
+      </div>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+      />
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary mt-2 fs-5">Register</button>
+    </div>
+  </form>
+</div>
